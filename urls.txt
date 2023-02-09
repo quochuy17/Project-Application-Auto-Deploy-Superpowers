@@ -1,2 +1,2 @@
-- Public Url to GitHub repository : https://github.com/quochuy17/Project-Application-Auto-Deploy-Superpowers
+- Public Url to GitHub repository : https://github.com/quochuy17/Project-Application-Auto-Deploy-Superpowers.git
 - Public URL for your S3 Bucket : 
