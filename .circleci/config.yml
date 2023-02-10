@@ -8,7 +8,6 @@ commands:
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
     parameters:
-      # Add parameter here   
       Workflow_ID:
         type: string
         default: ${CIRCLE_WORKFLOW_ID:0:7}
@@ -17,14 +16,12 @@ commands:
           name: Destroy environments
           when: on_fail
           command: |
-            # Your code here
             echo "Destroying environment: << parameters.Workflow_ID >> "
             aws --region us-west-2 s3 rm s3://udapeople-<<parameters.Workflow_ID>> --recursive
             aws --region us-west-2 cloudformation delete-stack --stack-name udapeople-backend-<< parameters.Workflow_ID >>
             aws --region us-west-2 cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.Workflow_ID >>
-            exit 1
 
-    install_awscli:
+  install_awscli:
     description: Install AWS CLI # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
     steps:
       - run:
